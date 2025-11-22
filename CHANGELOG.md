@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.3.0] - 2025-11-22
+
+### Added
+- Support Ingress Home Assistant pour accès sécurisé
+- Icône dans la sidebar (panel_icon: mdi:printer-3d)
+- Panel accessible depuis la sidebar Home Assistant
+- Variable d'environnement INGRESS_PATH pour routing
+
+### Fixed
+- Interface web maintenant accessible via Ingress
+- Détection automatique du username via header X-Ingress-User fonctionnelle
+- Suppression du champ image obsolète dans config.yaml
+
 ## [0.2.0] - 2025-11-22
 
 ### Changed

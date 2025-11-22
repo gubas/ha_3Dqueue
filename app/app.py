@@ -16,6 +16,7 @@ app = Bottle()
 TODO_LIST = os.getenv('TODO_LIST', 'todo.impressions_3d')
 SUPERVISOR_TOKEN = os.getenv('SUPERVISOR_TOKEN', '')
 HA_URL = os.getenv('HA_URL', 'http://supervisor/core')
+INGRESS_PATH = os.getenv('INGRESS_PATH', '')
 
 # Dossier de données
 DATA_FOLDER = Path('/data')
@@ -227,5 +228,14 @@ def delete_item(item_id):
     return json.dumps({'success': True})
 
 
+# Support Ingress - mount app sous le path ingress si défini
+if INGRESS_PATH:
+    main_app = Bottle()
+    main_app.mount(INGRESS_PATH, app)
+    run_app = main_app
+else:
+    run_app = app
+
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=False, server='wsgiref')
+    run_app.run(host='0.0.0.0', port=5000, debug=False, server='wsgiref')

@@ -21,4 +21,3 @@ options:
   todo_list: "todo.impressions_3d"
 schema:
   todo_list: str
-image: "ghcr.io/guillaume-flace/{arch}-addon-3d-print-queue"

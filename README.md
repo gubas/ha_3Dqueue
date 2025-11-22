@@ -1,6 +1,6 @@
 # 🖨️ Queue d'impression 3D - Add-on Home Assistant
 
-**Version 1.0.0**
+**Version 0.2.0**
 
 Interface web familiale ultra-simple pour gérer les demandes d'impression 3D via MakerWorld.
 
